@@ -1,0 +1,6 @@
+USE [FazTudo]
+GO
+
+SELECT * FROM F;
+SELECT * FROM P;
+SELECT * FROM FP;
