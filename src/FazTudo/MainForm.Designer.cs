@@ -59,18 +59,27 @@ namespace FazTudo
             this.fBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.fTableAdapter = new FazTudo.FazTudoDataSetTableAdapters.FTableAdapter();
             this.tableAdapterManager = new FazTudo.FazTudoDataSetTableAdapters.TableAdapterManager();
+            this.fPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fPTableAdapter = new FazTudo.FazTudoDataSetTableAdapters.FPTableAdapter();
+            this.fPDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fazTudoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fBindingNavigator)).BeginInit();
             this.fBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fPDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -133,8 +142,13 @@ namespace FazTudo
             // 
             this.splitContainer1.Panel1.AutoScroll = true;
             this.splitContainer1.Panel1.Controls.Add(this.fDataGridView);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.AutoScroll = true;
+            this.splitContainer1.Panel2.Controls.Add(this.fPDataGridView);
             this.splitContainer1.Size = new System.Drawing.Size(784, 490);
-            this.splitContainer1.SplitterDistance = 476;
+            this.splitContainer1.SplitterDistance = 443;
             this.splitContainer1.TabIndex = 0;
             // 
             // fDataGridView
@@ -150,7 +164,7 @@ namespace FazTudo
             this.fDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fDataGridView.Location = new System.Drawing.Point(0, 0);
             this.fDataGridView.Name = "fDataGridView";
-            this.fDataGridView.Size = new System.Drawing.Size(476, 490);
+            this.fDataGridView.Size = new System.Drawing.Size(443, 490);
             this.fDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -214,7 +228,7 @@ namespace FazTudo
             this.fBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.fBindingNavigator.Name = "fBindingNavigator";
             this.fBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.fBindingNavigator.Size = new System.Drawing.Size(309, 25);
+            this.fBindingNavigator.Size = new System.Drawing.Size(278, 25);
             this.fBindingNavigator.TabIndex = 3;
             this.fBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -270,7 +284,6 @@ namespace FazTudo
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -320,10 +333,52 @@ namespace FazTudo
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.FPTableAdapter = null;
+            this.tableAdapterManager.FPTableAdapter = this.fPTableAdapter;
             this.tableAdapterManager.FTableAdapter = this.fTableAdapter;
             this.tableAdapterManager.PTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = FazTudo.FazTudoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // fPBindingSource
+            // 
+            this.fPBindingSource.DataMember = "FK_FP_F";
+            this.fPBindingSource.DataSource = this.fBindingSource;
+            // 
+            // fPTableAdapter
+            // 
+            this.fPTableAdapter.ClearBeforeFill = true;
+            // 
+            // fPDataGridView
+            // 
+            this.fPDataGridView.AutoGenerateColumns = false;
+            this.fPDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.fPDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.fPDataGridView.DataSource = this.fPBindingSource;
+            this.fPDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fPDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.fPDataGridView.Name = "fPDataGridView";
+            this.fPDataGridView.Size = new System.Drawing.Size(337, 490);
+            this.fPDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "F#";
+            this.dataGridViewTextBoxColumn5.HeaderText = "F#";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "P#";
+            this.dataGridViewTextBoxColumn6.HeaderText = "P#";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "QDE";
+            this.dataGridViewTextBoxColumn7.HeaderText = "QDE";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // MainForm
             // 
@@ -345,6 +400,7 @@ namespace FazTudo
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fDataGridView)).EndInit();
@@ -353,6 +409,8 @@ namespace FazTudo
             ((System.ComponentModel.ISupportInitialize)(this.fBindingNavigator)).EndInit();
             this.fBindingNavigator.ResumeLayout(false);
             this.fBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fPDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,6 +446,12 @@ namespace FazTudo
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.BindingSource fPBindingSource;
+        private FazTudoDataSetTableAdapters.FPTableAdapter fPTableAdapter;
+        private System.Windows.Forms.DataGridView fPDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }
 

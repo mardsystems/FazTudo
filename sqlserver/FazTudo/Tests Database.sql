@@ -4,3 +4,10 @@ GO
 SELECT * FROM F;
 SELECT * FROM P;
 SELECT * FROM FP;
+	
+SELECT *
+FROM F, FP, P
+WHERE
+	F.F# = FP.F#
+	AND
+	P.P# = FP.P#
